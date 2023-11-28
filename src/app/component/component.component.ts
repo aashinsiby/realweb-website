@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { AnimationAction } from 'three';
 @Injectable({
   providedIn: 'root'

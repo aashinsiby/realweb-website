@@ -1,0 +1,15 @@
+#contact {
+ background-color: #1c1c1c;
+}
+
+h5{
+ font-family: 'Anton', sans-serif;
+ 
+}
+p {
+ opacity: .7;
+}
+p:hover { color:red;
+opacity: 1;
+}
+span:hover { color: white;}

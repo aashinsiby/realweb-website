@@ -58,12 +58,10 @@ export class ComponentComponent implements OnInit {
     const loader = new GLTFLoader();
     loader.load('assets/logo.glb', (gltf) => {
       this.model = gltf.scene;
-      this.model.scale.set(.01, .01, .01);
+      this.model.scale.set(.5 ,.5, .5);
       this.scene.add(this.model);
 
-      if (this.model) {
-        this.model.scale.set(3, 3, 3);
-      }
+     
                                                     //----------animation--------------------
       this.animations = gltf.animations;
       if (this.animations.length > 0) {

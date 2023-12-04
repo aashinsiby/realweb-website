@@ -1,10 +1,18 @@
 
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" #up>
   <div class="row g-0 text-white">
     
-  <div class="model-container"></div>
-  <div class="container bg-black text-white">
+    <div class="model-container">
+      <div *ngIf="isLoading" class="loading-message">
+        Loading... <!-- You can customize this message or add a spinner/icon -->
+      </div>
+      
+        <a (click)="scrollToDown()"><span><i class="fa fa-arrow-down" aria-hidden="true"></i></span></a>
+      
+      
+    </div>
+  <div class="container bg-black text-white" #down>
    <h1 class="display-4">Welcome to RealWeb - Unleashing Digital Creativity!</h1>
    </div>
  
@@ -14,9 +22,9 @@
 </div>
 
 
-<div class="p-5 mb-4 bg-black rounded-3">
+<div class="p-5 mb-4 bg-black rounded-3" >
   <div class="row g-0 text-white">
-    <div class="col-md-5 "><video  width="100%" autoplay loop>
+    <div class="col-md-5 "><video  width="100%" autoplay loop muted>
       <source src="assets/passion.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video></div>
@@ -25,13 +33,8 @@
    <p class="lead">We exist to empower businesses and individuals with cutting-edge IT solutions and awe-inspiring design. Our mission is to be the catalyst for digital evolution, providing our clients with the tools they need to stand out in a rapidly changing technological landscape.</p>
    
  </div>
- 
+ </div>
 </div>
-</div>
-
-
-
-
   <div class="p-5 mb-4 bg-black rounded-3">
   <div class="row g-0 text-white">
     
@@ -39,10 +42,13 @@
    <h3>What Sets Us Apart:</h3>
    <p class="lead">In a world flooded with information, RealWeb stands out by infusing every project with a unique blend of creativity and functionality. We thrive on challenges, turning obstacles into opportunities and transforming ideas into immersive experiences. Our commitment to excellence is unwavering, ensuring that each project reflects the highest standards of quality and innovation.</p>
  </div>
- <div class="col-md-5"><video  width="100%" autoplay loop>
+ <div class="col-md-5"><video  width="100%" autoplay loop muted>
   <source src="assets/immersive.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+</div>
 
- </div>
+ 
 
+</div>
+</div>

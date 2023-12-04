@@ -3,3 +3,60 @@ h3{
 
 }
 
+.model-container {
+ position: relative;
+ width: 100%;
+ height: 100%;
+}
+
+.loading-message {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background-color: rgba(255, 255, 255, 0.8);
+ padding: 10px 20px;
+ border-radius: 5px;
+}
+
+a{
+ display: block;
+ width: 40px;
+ height: 40px;
+ line-height: 40px;
+ font-size: 18px;
+ font-family: sans-serif;
+ text-decoration: none;
+ color: #333;
+ border: 2px solid #333;
+ letter-spacing: 2px;
+ text-align: center;
+ position: absolute;
+ bottom: 60px; /* Adjust as needed */
+ right: 20px; /* Adjust as needed */
+ transition: all .35s;
+}
+
+a span{
+ position: relative;
+ z-index: 2;
+}
+
+a:after{
+ position: absolute;
+ content: "";
+ top: 0;
+ left: 0;
+ width: 0;
+ height: 100%;
+ background: #ff003b;
+ transition: all .35s;
+}
+
+a:hover{
+ color: #fff;
+}
+
+a:hover:after{
+ width: 100%;
+}

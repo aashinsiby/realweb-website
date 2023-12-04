@@ -5,6 +5,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { AnimationAction } from 'three';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +16,21 @@ import { AnimationAction } from 'three';
   imports: [CommonModule],
   templateUrl: './component.component.html',
   styleUrl: './component.component.css'
+
 })
+
 export class ComponentComponent implements OnInit {
+  @ViewChild('down') modelContainer!: ElementRef;
+  
+
+
+  scrollToDown() {
+    if (this.modelContainer) {
+      const containerElement = this.modelContainer.nativeElement as HTMLElement;
+      containerElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -23,13 +38,17 @@ export class ComponentComponent implements OnInit {
   mixer: THREE.AnimationMixer | null = null;
   animations: THREE.AnimationClip[] = [];
   currentAnimationIndex = 0;
-
+ isLoading: boolean = true;
  
   ngOnInit(): void {
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
     controls.update();
     controls.autoRotate = true;
     controls.enableZoom = false;
+     
+    // const axesHelper = new THREE.AxesHelper(10); // Adjust the size as needed
+    //   this.scene.add(axesHelper);
+      
     const resizeRendererToDisplaySize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -58,10 +77,10 @@ export class ComponentComponent implements OnInit {
     const loader = new GLTFLoader();
     loader.load('assets/logo.glb', (gltf) => {
       this.model = gltf.scene;
-      this.model.scale.set(.5 ,.5, .5);
+      this.model.scale.set(.3 ,.3, .3);
       this.scene.add(this.model);
-
-     
+      this.isLoading = false;
+      
                                                     //----------animation--------------------
       this.animations = gltf.animations;
       if (this.animations.length > 0) {
@@ -84,9 +103,13 @@ export class ComponentComponent implements OnInit {
           actions.forEach(action => {
             action.timeScale = 0; // Set timeScale to 0 to pause the animation
           });
-        }, 3000); // 3 seconds delay before pausing (adjust as needed)
+        }, 4200); // 3 seconds delay before pausing (adjust as needed)
       }
-      
+      const degrees = 140;
+const radians = (degrees * Math.PI) / 180; // Convert degrees to radians
+
+// Rotate the object by 160 degrees along the X-axis
+this.model.rotateY(radians); 
     });
   
     
@@ -101,16 +124,40 @@ export class ComponentComponent implements OnInit {
       
     };
    //--------------------------lights---------------------------------------------------
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 5); 
-    directionalLight.position.set(1, 1, 1); 
-    this.scene.add(directionalLight);
+    // const directionalLight = new THREE.DirectionalLight(0xffffff, 5); 
+    // directionalLight.position.set(1, 1, 1); 
+    // this.scene.add(directionalLight);
     
-    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 5);
-    directionalLight2.position.set(-1,-1,-1)
-    this.scene.add(directionalLight2);
-   
+    // const directionalLight2 = new THREE.DirectionalLight(0xffffff, 5);
+    // directionalLight2.position.set(-1,-1,-1)
+    // this.scene.add(directionalLight2);
+
+  // const rectLight = new THREE.RectAreaLight(0xffffff, 5, 10, 10);
+  // rectLight.position.set(5, 5, 0);
+  // rectLight.lookAt(0, 0, 0);
+  // this.scene.add(rectLight);
+ 
+  //   const pointlight1 = new THREE.PointLight(0xffffff,25);
+  //   pointlight1.position.set(1,0,0);
+  //   this.scene.add(pointlight1);
+
+    const pointLight = new THREE.PointLight(0xffffff, 25, 500);
+pointLight.position.set(5, 5, 0);
+this.scene.add(pointLight);
+
+// const pointhelper = new THREE.PointLightHelper(pointLight, 1);
+// this.scene.add(pointhelper);
+
+const pointLight1 = new THREE.PointLight(0xffffff, 25, 500);
+pointLight1.position.set(-5, 2, 3);
+this.scene.add(pointLight1);
+
+// const pointhelper1 = new THREE.PointLightHelper(pointLight1, 1);
+// this.scene.add(pointhelper1);
     
-    animate();
+
+
+animate();
   
   }
  

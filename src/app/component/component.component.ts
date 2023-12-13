@@ -45,12 +45,13 @@ export class ComponentComponent implements OnInit {
  
   ngOnInit(): void {
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
-    controls.update();
+   
     // controls.autoRotate = true;
     controls.enableZoom=false;
     controls.enablePan=false;
-    controls.enableDamping = true;
-   
+
+    controls.enabled = false;
+    controls.update();
    
     // const axesHelper = new THREE.AxesHelper(10); // Adjust the size as needed
     //   this.scene.add(axesHelper);

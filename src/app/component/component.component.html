@@ -1,25 +1,34 @@
 
 
-<div class="jumbotron jumbotron-fluid" #up>
+<div class="jumbotron jumbotron-fluid" #up id="head">
   <div class="row g-0 text-white">
-    
+   
     <div class="model-container">
+    
+ 
       <div *ngIf="isLoading" class="loading-message">
         Loading... <!-- You can customize this message or add a spinner/icon -->
       </div>
+    </div>
+   
+
+      <div class="container text-white" >
+        <h1>
+         <span class="centered-text"> -Realweb-</span><br>
+          <span id="Heading">Unleashing Digital</span><span class="flickering" >Creativity!</span>
+        </h1>
+      </div>
       
         <a (click)="scrollToDown()"><span><i class="fa fa-arrow-down" aria-hidden="true"></i></span></a>
-      
-      
-    </div>
-  <div class="container bg-black text-white" #down>
-   <h1 class="display-4">Welcome to RealWeb - Unleashing Digital Creativity!</h1>
-   </div>
+      </div>
+   
+    
+   
  
- <p class="lead py-5 text-center">At <span style="color: red;"> RealWeb</span> , we are not just a team; we're a collective of creative minds passionate about pushing the boundaries of IT and design. We believe in the power of innovation and the magic that happens when technology and art intersect. Our journey began with a simple yet profound idea: to create a space where imagination thrives and ideas come to life.</p>
+ <p class="lead py-5 text-center text-white">At <span style="color: red;" #down> RealWeb</span> , we are not just a team; we're a collective of creative minds passionate about pushing the boundaries of IT and design. We believe in the power of innovation and the magic that happens when technology and art intersect. Our journey began with a simple yet profound idea: to create a space where imagination thrives and ideas come to life.</p>
  <hr class="my-4">
-</div>
-</div>
+
+
 
 
 <div class="p-5 mb-4 bg-black rounded-3" >

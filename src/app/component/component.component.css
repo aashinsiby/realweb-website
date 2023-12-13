@@ -2,12 +2,90 @@ h3{
  font-family: 'Montserrat', sans-serif;
 
 }
+#head {
+ margin-top: 0; /* Remove any default margin from the jumbotron */
+}
+
+.centered-text {
+ display: inline-block;
+ font-family: 'Outfit', sans-serif;
+ position: absolute;
+ top: 50%;
+ left: 20%;
+ bottom:60px; /* Adjust the top position as needed */
+ z-index: 1;
+ animation: scaleText 10s infinite alternate; 
+ font-size: 80px;
+ color: #ff003b;
+
+ 
+}
+@keyframes scaleText {
+ 0% {
+   transform: scale(1); /* Initial scale */
+ }
+ 100% {
+   transform: scale(1.1); /* Scale to 1.1 times */
+   
+ }
+}
+#Heading{
+ font-family: 'Forum', serif;
+ position: absolute;
+ top: 70%;
+ left:20%;
+ bottom:60px; /* Adjust the top position as needed */
+ z-index: 1;
+}
+h1 {
+ font-size: 30px;
+}
+.flickering {
+  color: orange;
+  text-shadow: 0 0 10px #ff0000;
+  filter: blur(.5px) brightness(1.2);
+ animation: flicker 1s infinite;
+ font-family: 'Forum', serif;
+ position: absolute;
+ top: 70%;
+ left:35%;
+ bottom:60px; /* Adjust the top position as needed */
+ z-index: 1;
+}
+@media only screen and (max-width: 600px ) {
+  .centered-text{
+    font-size: 50px;
+    top: 50%;
+  }
+  #Heading{
+    font-size: 30px;
+    top: 60%;
+  }
+  .flickering {
+    font-size: 30px;
+    top: 60%; /* Adjust this value for smaller screens */
+    left: 67%; /* Adjust this value for smaller screens */
+  }
+}
+@keyframes flicker {
+ 0%, 18%, 22%, 25%, 53%, 57%, 100% {
+   opacity: 1;
+ }
+ 20%, 24%, 55% {
+   opacity: 0;
+ }
+}
+
+
+
 
 .model-container {
  position: relative;
  width: 100%;
  height: 100%;
+ 
 }
+
 
 .loading-message {
  position: absolute;
@@ -32,8 +110,8 @@ a{
  letter-spacing: 2px;
  text-align: center;
  position: absolute;
- bottom: 60px; /* Adjust as needed */
- right: 20px; /* Adjust as needed */
+ bottom: 80px; /* Adjust as needed */
+ right: 5px; /* Adjust as needed */
  transition: all .35s;
 }
 

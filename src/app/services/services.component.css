@@ -1,5 +1,7 @@
 
-
+.wrapper{
+ cursor: progress;
+}
 
 a{
  display: block;

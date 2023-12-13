@@ -1,0 +1,5 @@
+/* In your global styles or component styles file */
+app-header, app-component {
+ margin-top: 0; /* Remove any default margin */
+ padding-top: 0; /* Remove any default padding */
+}

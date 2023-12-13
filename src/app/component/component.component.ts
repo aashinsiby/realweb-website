@@ -106,10 +106,11 @@ export class ComponentComponent implements OnInit {
         }, 4200); // 3 seconds delay before pausing (adjust as needed)
       }
       const degrees = 140;
-const radians = (degrees * Math.PI) / 180; // Convert degrees to radians
+      const radians = (degrees * Math.PI) / 180; // Convert degrees to radians
 
 // Rotate the object by 160 degrees along the X-axis
 this.model.rotateY(radians); 
+
     });
   
     

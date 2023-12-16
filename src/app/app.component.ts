@@ -6,7 +6,7 @@ import { ComponentComponent } from './component/component.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +17,5 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class AppComponent  {
   title = 'realweb-website';
+ 
 }

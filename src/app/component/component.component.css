@@ -7,15 +7,15 @@ h3{
 }
 
 .centered-text {
- display: inline-block;
+ /* display: inline-block; */
  font-family: 'Outfit', sans-serif;
  position: absolute;
- top: 50%;
- left: 20%;
- bottom:60px; /* Adjust the top position as needed */
+ top: 50vh;
+ left: 10vw;
+  
  z-index: 1;
  animation: scaleText 10s infinite alternate; 
- font-size: 80px;
+ font-size: 75px;
  color: #ff003b;
 
  
@@ -32,9 +32,9 @@ h3{
 #Heading{
  font-family: 'Forum', serif;
  position: absolute;
- top: 70%;
- left:20%;
- bottom:60px; /* Adjust the top position as needed */
+ top: 67vh;
+ left:11.5vw;
+ /* Adjust the top position as needed */
  z-index: 1;
 }
 h1 {
@@ -46,27 +46,12 @@ h1 {
   filter: blur(.5px) brightness(1.2);
  animation: flicker 1s infinite;
  font-family: 'Forum', serif;
- position: absolute;
- top: 70%;
- left:35%;
- bottom:60px; /* Adjust the top position as needed */
+ /* position: absolute; */
+ 
+  
  z-index: 1;
 }
-@media only screen and (max-width: 600px ) {
-  .centered-text{
-    font-size: 50px;
-    top: 50%;
-  }
-  #Heading{
-    font-size: 30px;
-    top: 60%;
-  }
-  .flickering {
-    font-size: 30px;
-    top: 60%; /* Adjust this value for smaller screens */
-    left: 67%; /* Adjust this value for smaller screens */
-  }
-}
+
 @keyframes flicker {
  0%, 18%, 22%, 25%, 53%, 57%, 100% {
    opacity: 1;

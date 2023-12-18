@@ -6,7 +6,10 @@ import { ComponentComponent } from './component/component.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
-import { Component  } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +18,16 @@ import { Component  } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent  {
-  title = 'realweb-website';
+export
  
+class
+ 
+AppComponent
+ 
+
+ 
+{
+
+ 
+
 }

@@ -4,7 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { AnimationAction } from 'three';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 
 
@@ -81,12 +81,15 @@ export class ComponentComponent implements OnInit {
     if (container) {
       container.appendChild(this.renderer.domElement);
     }
-  
+    
                       //---------------------------------------------load model--------------------------------
                       const loader = new GLTFLoader();
+                      const dracoLoader = new DRACOLoader();
+                      dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+                      loader.setDRACOLoader(dracoLoader);
                       loader.load('assets/logo.glb', (gltf) => {
                         this.model = gltf.scene;
-                        this.model.scale.set(.3 ,.3, .3);
+                        this.model.scale.set(2 ,2, 2);
                         this.model.position.set(5 ,-0.134, -0.840);
                         this.scene.add(this.model);
                         this.isLoading = false;
